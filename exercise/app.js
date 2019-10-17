@@ -8,6 +8,7 @@ const express = require('express'),
 
 // Setting up Controllers
 const indexController = require('./controllers/index');
+const arsenalController = require('./controllers/arsenalController');
 
 const app = express();
 
@@ -26,6 +27,6 @@ app.use(helmet());
 
 // Telling Express to use the routes
 app.use('/', indexController);
-
+app.use('/arsenal', arsenalController);
 
 module.exports = app;

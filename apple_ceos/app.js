@@ -4,7 +4,8 @@ const express = require("express"),
     cookieParser = require("cookie-parser"),
     logger = require("morgan");
 
-const indexRouter = require("./routes/index");
+const indexController = require("./routes/index"),
+    ceosController = require("./routes/ceos")
 
 const app = express();
 
@@ -18,6 +19,7 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, "public")));
 
-app.use("/", indexRouter);
+app.use("/", indexController);
+app.use("/ceos", ceosController);
 
 module.exports = app;

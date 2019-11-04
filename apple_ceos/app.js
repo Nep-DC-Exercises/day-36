@@ -4,6 +4,8 @@ const express = require("express"),
     cookieParser = require("cookie-parser"),
     logger = require("morgan");
 
+require('dotenv').config()
+
 const indexController = require("./routes/index"),
     ceosController = require("./routes/ceos")
 

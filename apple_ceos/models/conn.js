@@ -5,10 +5,17 @@ const pgp = require("pg-promise")({
 });
 
 const options = {
-    host: "localhost",
-    user: "neporshiso",
-    database: "apple_ceos"
+    host: process.env.DB_HOST,
+    user: "postgres",
+    database: "postgres",
+    password: process.env.DB_PASS
 };
+
+// const options = {
+//     host: "localhost",
+//     user: "neporshiso",
+//     database: "apple_ceos"
+// };
 
 const db = pgp(options);
 
